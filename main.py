@@ -8,7 +8,7 @@ wn.bgcolor("skyblue")
 # basic layout of park
 layout = trtl.Turtle()
 layout.penup()
-layout.goto(-375-300)
+layout.goto(-375,-300)
 layout.pendown()
 layout.left(90)
 layout.forward(350)
