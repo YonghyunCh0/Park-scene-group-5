@@ -309,6 +309,271 @@ def xmas_tree():
         
     tree.end_fill()
 
+benchsize = 0.2
+bench_colors = ["#944d2f", "#bf8a73", "#deb581", "#4b4c4d"]
+bench = trtl.Turtle()
+
+def draw_leg():
+  bench.fillcolor(bench_colors[0])
+  bench.begin_fill()
+  bench.forward(30*benchsize)
+  bench.left(90)
+  bench.circle(16*benchsize,180)
+  bench.end_fill()
+  bench.penup()
+  bench.left(90)
+  bench.forward(30*benchsize)
+  bench.left(90)
+  bench.circle(16*benchsize,112.5)
+  bench.pendown()
+  bench.fillcolor(bench_colors[1])
+  bench.begin_fill()
+  bench.right(112.5)
+  bench.forward(40*benchsize)
+  bench.right(90)
+  bench.forward(16*benchsize)
+  bench.right(90)
+  bench.forward(40*benchsize)
+  bench.penup()
+  bench.right(115)
+  bench.circle(17*benchsize,50)
+  bench.end_fill()
+
+
+
+def draw_seat():
+  bench.right(115)
+  bench.forward(42*benchsize)
+  bench.right(90)
+  bench.pendown()
+  bench.forward(36*benchsize)
+  bench.left(180)
+  bench.fillcolor(bench_colors[2])
+  bench.begin_fill()
+  bench.forward(245*benchsize)
+  bench.right(120)
+  bench.forward(14*benchsize)
+  bench.right(60)
+  bench.forward(235*benchsize)
+  bench.right(60)
+  bench.forward(14*benchsize)
+  bench.end_fill()
+
+
+def lower_rest():
+  bench.right(180)
+  bench.forward(14*benchsize)
+  bench.right(30)
+  bench.penup()
+  bench.forward(20*benchsize)
+  bench.pendown()
+  bench.begin_fill()
+  bench.left(90)
+  bench.forward(235*benchsize)
+  bench.right(100)
+  bench.forward(12*benchsize)
+  bench.right(80)
+  bench.forward(230*benchsize)
+  bench.right(80)
+  bench.forward(12*benchsize)
+  bench.end_fill()
+  
+
+def upper_rest():
+  bench.right(180)
+  bench.penup()
+  bench.forward(27*benchsize)
+  bench.pendown()
+  bench.left(80)
+  bench.begin_fill()
+  bench.forward(225*benchsize)
+  bench.right(100)
+  bench.forward(12*benchsize)
+  bench.right(80)
+  bench.forward(220*benchsize)
+  bench.right(80)
+  bench.forward(12*benchsize)
+  bench.end_fill()
+
+def left_supports():
+  bench.penup()
+  bench.forward(47*benchsize)
+  bench.pendown()
+  bench.right(100)
+  bench.forward(35*benchsize)
+  bench.fillcolor(bench_colors[0])
+  bench.begin_fill()
+  bench.right(80)
+  bench.forward(20*benchsize)
+  bench.left(80)
+  bench.forward(12*benchsize)
+  bench.left(100)
+  bench.forward(20*benchsize)
+  bench.end_fill()
+  bench.penup()
+  bench.left(180)
+  bench.forward(22*benchsize)
+  bench.right(100)
+  bench.forward(6*benchsize)
+  bench.pendown()
+  bench.fillcolor(bench_colors[3])
+  bench.begin_fill()
+  bench.circle(3*benchsize)
+  bench.end_fill()
+  
+  bench.penup()
+  bench.backward(5*benchsize)
+  bench.left(100)
+  bench.forward(10*benchsize)
+  bench.pendown()
+  bench.fillcolor(bench_colors[0])
+  bench.begin_fill()
+  bench.forward(15*benchsize)
+  bench.right(100)
+  bench.forward(12*benchsize)
+  bench.right(80)
+  bench.forward(15*benchsize)
+  bench.end_fill()
+  bench.right(100)
+  bench.forward(12*benchsize)
+  bench.right(80)
+  bench.penup()
+  bench.forward(18*benchsize)
+  bench.right(100)
+  bench.forward(6*benchsize)
+  bench.pendown()
+  bench.fillcolor(bench_colors[1])
+  bench.begin_fill()
+  bench.circle(3*benchsize)
+  bench.end_fill()
+
+def right_supports():
+  bench.pendown()
+  bench.fillcolor(bench_colors[0])
+  bench.begin_fill()
+  bench.right(100)
+  bench.forward(20*benchsize)
+  bench.left(100)
+  bench.forward(10*benchsize)
+  bench.left(80)
+  bench.forward(20*benchsize)
+  bench.end_fill()
+  bench.penup()
+  bench.left(180)
+  bench.forward(22*benchsize)
+  bench.right(80)
+  bench.forward(5*benchsize)
+  bench.pendown()
+  bench.fillcolor(bench_colors[1])
+  bench.begin_fill()
+  bench.circle(3*benchsize)
+  bench.end_fill()
+  
+  bench.penup()
+  bench.backward(5*benchsize)
+  bench.left(80)
+  bench.forward(10*benchsize)
+  bench.pendown()
+  bench.fillcolor(bench_colors[0])
+  bench.begin_fill()
+  bench.forward(15*benchsize)
+  bench.right(80)
+  bench.forward(10*benchsize)
+  bench.right(100)
+  bench.forward(15*benchsize)
+  bench.end_fill()
+  bench.right(80)
+  bench.forward(10*benchsize)
+  bench.right(100)
+  bench.forward(18*benchsize)
+  bench.right(80)
+  bench.forward(5*benchsize)
+  bench.fillcolor(bench_colors[3])
+  bench.begin_fill()
+  bench.circle(3*benchsize)
+  bench.end_fill()
+
+def draw_bench():
+  #first leg
+  draw_leg()
+  
+  #getting to second leg
+  bench.circle(17*benchsize,65)
+  bench.left(90)
+  bench.forward(30*benchsize)
+  bench.penup()
+  bench.forward(150*benchsize)
+  bench.pendown()
+  
+  #second leg
+  draw_leg()
+  
+  #seat section
+  draw_seat()
+  
+  #back rest bottom
+  lower_rest()
+  
+  #back rest top
+  upper_rest()
+  
+  #back rest supports
+  #left side supports
+  left_supports()
+  
+  #going to right side
+  bench.penup()
+  bench.forward(5*benchsize)
+  bench.right(80)
+  bench.forward(49*benchsize)
+  bench.right(100)
+  bench.forward(165*benchsize)
+  
+  #right side supports
+  right_supports()
+  
+  #going to left edge
+  bench.penup()
+  bench.forward(5*benchsize)
+  bench.right(100)
+  bench.forward(52*benchsize)
+  bench.left(100)
+  bench.forward(200*benchsize)
+  bench.pendown()
+  
+  #arm rest left
+  bench.left(85)
+  bench.fillcolor(bench_colors[1])
+  bench.begin_fill()
+  bench.forward(25*benchsize)
+  bench.left(90)
+  bench.forward(10*benchsize)
+  bench.left(85)
+  bench.forward(25*benchsize)
+  bench.end_fill()
+  bench.penup()
+  bench.right(80)
+  bench.forward(225*benchsize)
+  bench.pendown()
+  
+  #arm rest right
+  bench.right(85)
+  bench.begin_fill()
+  bench.forward(25*benchsize)
+  bench.right(90)
+  bench.forward(10*benchsize)
+  bench.right(85)
+  bench.forward(25*benchsize)
+  bench.end_fill()
+
+bench.penup()
+bench.goto(-20,-40)
+bench.right(15)
+bench.pendown()
+draw_bench()
+
+
+
 walkersize = 0.5
 walker_colors = ["gray", "green", "brown"]
 walker = trtl.Turtle()
