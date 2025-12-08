@@ -566,11 +566,7 @@ def draw_bench():
   bench.forward(25*benchsize)
   bench.end_fill()
 
-bench.penup()
-bench.goto(-20,-40)
-bench.right(15)
-bench.pendown()
-draw_bench()
+
 
 
 
@@ -677,8 +673,6 @@ def dog_walker():
   #draw dog leash
   leash()
 
-#draw dog walker
-dog_walker()
 
 def tail():
   walker.fillcolor(walker_colors[2])
@@ -755,8 +749,41 @@ def dog():
   
   #head
   dog_head()
+"""
+#draw trees
+tree_one(-300,45)
+tree_one(200, -100)
+tree_two(250, 50)
+tree_three(-250, 45)
+"""
+#draw benches
+bench.penup()
+bench.goto(-50,-70)
+bench.setheading(0)
+bench.right(30)
+bench.pendown()
+draw_bench()
+bench.penup()
+bench.goto(-10,-110)
+bench.setheading(0)
+bench.right(45)
+bench.pendown()
+draw_bench()
+
+
+#draw dog walker
+walker.penup()
+walker.goto(-300, 10)
+walker.right(12)
+walker.pendown()
+dog_walker()
 
 #draw dog
 dog()
+
+#draw car
+car()
+
+
 
 wn.mainloop()
