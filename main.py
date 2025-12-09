@@ -878,5 +878,5 @@ walker.hideturtle()
 car()
 
 
-wn = turtle.Screen() 
+wn = trtl.Screen() 
 wn.mainloop() 
