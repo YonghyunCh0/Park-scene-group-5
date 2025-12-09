@@ -793,12 +793,6 @@ def bar(scale, x, y):
 bar(1,0,0)
 bar(0.75,100,0)
 
-# Function for checking coordinates 
-def position():
-  x_coord = t.xcor()
-  y_coord = t.ycor()
-  print(f"X: {x_coord} Y: {y_coord}") 
-
 # Dip bars 
 def dip_bar(scale, x, y):
   t.goto(x,y)
