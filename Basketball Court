@@ -1,7 +1,15 @@
 import turtle as trtl
+trtl.colormode(255)
+trtl.resizemode("user")
+
+# screen setup
+wn = trtl.Screen()
+wn.setup(width = 750, height= 550)
+wn.bgcolor("skyblue")
+trtl.speed(0)
 bc = trtl.Turtle()
 
-
+bc = trtl.Turtle()
 def basketball_court():
   # Outline of the court
   bc.pencolor("black")
@@ -159,13 +167,61 @@ def basketball_court():
   bc.forward(21)
   bc.circle(10,180)
   bc.forward(30)
+
+
+cl = trtl.Turtle()
+def cloud():
+  cl.pensize(3)
+  cl.color("black", "white")
+  cl.speed(0)
+  cl.penup()
+
+  # Start position
+  cl.pendown()
+  cl.begin_fill()
   
+  # Draw cl.oud bumps 
+  cl.circle(21, 180)
+  cl.right(100)
+  cl.circle(30, 180)
+  cl.right(110)
+  cl.circle(25, 180)
+  cl.right(90)
+  cl.circle(20, 180)
+  cl.right(140)
+  cl.circle(24, 180)
   
+  cl.end_fill()
+
+cl.penup()
+cl.goto(-200, 200)
+cl.pendown()
+cloud()
+cl.penup()
+cl.goto(0,0)
+
+cl.penup()
+cl.goto(-100, 150)
+cl.pendown()
+cloud()
+cl.penup()
+cl.goto(0,0)  
+  
+cl.penup()
+cl.goto(50, 210)
+cl.pendown()
+cloud()
+cl.penup()
+cl.goto(0,0)  
+  
+cl.penup()
+cl.goto(250, 50)
+cl.pendown()
+cloud()
+cl.penup()
+cl.goto(0,0) 
+
 
 basketball_court()
 wn = trtl.Screen()
 wn.mainloop()
-
-
-
-
