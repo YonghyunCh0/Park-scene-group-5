@@ -756,6 +756,63 @@ tree_one(150, -250)
 tree_two(100, 20)
 tree_three(300, -200)
 
+"""
+# Kyuhyun - Dip & pull up bars 
+# Make turtle object 
+t = trtl.Turtle()
+
+# Scale variable & pensize 
+t.pensize(7.5)
+t.penup()
+
+# Bar 
+def bar(scale, x, y): 
+  t.goto(x,y)
+  t.pendown()
+  t.setheading(90)
+  t.forward(100*scale)
+  t.penup()
+  t.setheading(270)
+  t.forward(10*scale)
+  t.setheading(0)
+  t.pensize(5)
+  t.pendown()
+  t.forward(75*scale)
+  t.penup()
+  t.pensize(7.5)
+  t.setheading(90)
+  t.forward(10*scale)
+  t.setheading(270)
+  t.pendown()
+  t.forward(100*scale)
+  t.setheading(0)
+  t.penup() 
+
+
+# Calling functions 
+# (0,0) Is the location of pull up bar - CHANGE THIS WHEN PUTTING TOGETHER 
+bar(1,0,0)
+bar(0.75,100,0)
+
+# Dip bars 
+def dip_bar(scale, x, y):
+  t.goto(x,y)
+  t.pensize(5)
+  t.setheading(90)
+  t.pendown()
+  t.forward(50*scale)
+  t.circle(-25*scale,75)
+  t.forward(75*scale)
+  t.circle(-25*scale,105)
+  t.forward(50*scale)
+  t.penup()
+  t.setheading(0) 
+
+dip_bar(1,0,0)
+dip_bar(1,50,0)
+t.hideturtle()
+
+
 #draw benches
 bench.penup()
 bench.goto(-50,-70)
