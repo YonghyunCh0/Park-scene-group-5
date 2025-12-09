@@ -821,7 +821,7 @@ def basketball(angle,distance,x,y):
   # Make turtle object 
   b = trtl.Turtle()
   b.shape("circle")
-  b.turtlesize(2)
+  b.turtlesize(1)
   
   # 1/10 chance to get blue ball 
   if random.randint(1,10) > 9: 
